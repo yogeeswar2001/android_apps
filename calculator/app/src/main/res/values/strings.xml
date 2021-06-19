@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">calculator</string>
+    //string names for clear and answer
+    <string name="btn_clr">clr</string>
+    <string name="btn_ans">=</string>
+    <string name="btn_del">del</string>
+
+    //string names for number buttons
+    <string name="btn_0">0</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+
+    //string names for operators
+    <string name="btn_add">+</string>
+    <string name="btn_sub">-</string>
+    <string name="btn_mul">*</string>
+    <string name="btn_div">/</string>
+    <string name="opn_bracket">(</string>
+    <string name="clo_bracket">)</string>
+</resources>
