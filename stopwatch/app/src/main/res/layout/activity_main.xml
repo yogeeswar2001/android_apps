@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        >
+    <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textSize="56sp"
+            android:layout_marginTop="100dp"
+            android:text="@string/time"
+    />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/resetbtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickReset"
+        />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/startbtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickStart"
+        />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/stopbtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickStop"
+        />
+</LinearLayout>
