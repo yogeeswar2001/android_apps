@@ -46,7 +46,8 @@ public class ExpEval {
             }
             i++;
         }
-        exp.add(temp);
+        if(!temp.equals(""))
+            exp.add(temp);
     }
     public void to_postfix() {
         Stack<String> s = new Stack<String>();

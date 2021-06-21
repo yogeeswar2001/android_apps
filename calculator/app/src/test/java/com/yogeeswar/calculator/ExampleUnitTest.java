@@ -1,7 +1,6 @@
 package com.yogeeswar.calculator;
 
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
 import java.util.ArrayList;
@@ -28,8 +27,10 @@ public class ExampleUnitTest {
     @DisplayName("parsing input expression")
     public void parseTest() {
         ExpEval e = new ExpEval();
-        e.parse("2*(100-500/10)");
-        ArrayList<String> expected = new ArrayList<String>(Arrays.asList("2","*","(","100","-","500","/","10",")"));
-        assertArrayEquals("should parse the input to string", expected.toArray(), e.exp.toArray());
+
+        e.parse("2*(100-500/10)+10");
+        ArrayList<String> expected = new ArrayList<String>(Arrays.asList("2","*","(","100","-","500","/","10",")","+","10"));
+        ArrayList<String> result = e.exp;
+        assertArrayEquals("should parse the input to string", expected.toArray(), result.toArray());
     }
 }
