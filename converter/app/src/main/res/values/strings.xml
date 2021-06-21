@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">converter</string>
+    <string-array name="options">
+        <item>decimal</item>
+        <item>hexadecimal</item>
+        <item>binary</item>
+    </string-array>
+    <string name="from_txt">FROM</string>
+    <string name="to_txt">TO</string>
+    <string name="hint">Enter value to be converted</string>
+    <string name="btn">convert</string>
+</resources>
