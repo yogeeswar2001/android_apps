@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">workout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="workout_title">workout title</string>
+    <string name="workout_desc">workout description</string>
+</resources>
