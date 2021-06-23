@@ -5,10 +5,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.CursorAdapter;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +35,19 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
+        AdapterView.OnItemLongClickListener listener = new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                String txt = ((TextView) view).getText().toString();
+                db.delete("TASK_LIST","NAME = ?", new String[]{txt});
+                Toast.makeText(MainActivity.this, "completed "+txt, Toast.LENGTH_SHORT).show();
+                onRestart();
+                return true;
+            }
+        };
+        list.setOnItemLongClickListener(listener);
     }
+
     public void onClickcreate(View view) {
         Intent intent = new Intent(this, AddTask.class);
         startActivity(intent);
