@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         TextView exp = (TextView) findViewById(R.id.exp);
         TextView ans = (TextView) findViewById(R.id.ans);
 
-        int data = e.cal_exp(exp.getText().toString());
+        String data = e.cal_exp(exp.getText().toString());
         ans.setText(String.valueOf(data));
     }
     public void onClickdelbtn(View view) {

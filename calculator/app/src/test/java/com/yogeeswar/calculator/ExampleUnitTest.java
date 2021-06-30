@@ -28,9 +28,19 @@ public class ExampleUnitTest {
     public void parseTest() {
         ExpEval e = new ExpEval();
 
-        e.parse("2*(100-500/10)+10");
-        ArrayList<String> expected = new ArrayList<String>(Arrays.asList("2","*","(","100","-","500","/","10",")","+","10"));
-        ArrayList<String> result = e.exp;
-        assertArrayEquals("should parse the input to string", expected.toArray(), result.toArray());
+        Boolean actual = e.parse("2*(-100-500/10)+10");
+        //ArrayList<String> expected = new ArrayList<String>(Arrays.asList("2","*","*","(","100","-","500","/","10",")","+","10"));
+        //ArrayList<String> result = e.exp;
+        //assertArrayEquals("should parse the input to string", expected.toArray(), result.toArray());
+        assertEquals("should parse the input to string", true, actual);
+    }
+
+    @Test
+    @DisplayName("conversion of integer to string")
+    public void to_str_test() {
+        ExpEval e = new ExpEval();
+
+        String actual = e.to_str(1345);
+        assertEquals("should convert integer to string", "1345", actual);
     }
 }

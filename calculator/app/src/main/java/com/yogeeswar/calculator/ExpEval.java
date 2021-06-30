@@ -8,7 +8,7 @@ public class ExpEval {
     ArrayList<String> post_exp;
 
     public Boolean is_operator(char x) {
-        if(x == '^' || x == '+' || x == '-' || x == '*' || x == '/' || x == '(' || x == ')' )
+        if(x == '^' || x == '+' || x == '-' || x == '*' || x == '/')
             return true;
         return false;
     }
@@ -28,13 +28,37 @@ public class ExpEval {
             num = num*10 + str.charAt(i)-'0';
         return num;
     }
-    public void parse(String str) {
+    public String to_str(int n) {
+        String str="";
+        int flag=0;
+        if(n<0) {
+            flag = 1;
+            n *= -1;
+        }
+        while(n>0) {
+            str = String.valueOf(n%10) + str;
+            n/=10;
+        }
+        if(flag==1)
+            str = "-"+str;
+        return str;
+    }
+    public boolean parse(String str) {
         String temp="";
         char x;
         int i=0;
         while(i<str.length()) {
             x = str.charAt(i);
-            if(x != '+' && x != '-' && x != '*' && x != '/'  && x != '(' && x != ')')
+
+            //checking for invalid input
+            if(i!=0 && ((is_operator(str.charAt(i-1)) && is_operator(x)) ||
+                    (str.charAt(i-1)=='(' && is_operator(x)) ||
+                    (is_operator(str.charAt(i-1)) && x==')')))
+                return true;
+            if( is_operator(str.charAt(str.length()-1)) )
+                return true;
+
+            if( !is_operator(x) && x != '(' && x != ')')
                 temp += x;
             else if(x == '(')
                 exp.add(String.valueOf(x));
@@ -48,11 +72,12 @@ public class ExpEval {
         }
         if(!temp.equals(""))
             exp.add(temp);
+        return false;
     }
     public void to_postfix() {
         Stack<String> s = new Stack<String>();
         for(int i=0;i<exp.size();i++) {
-            if( !is_operator(exp.get(i).charAt(0)) )
+            if( !is_operator(exp.get(i).charAt(0)) && exp.get(i).charAt(0) != '(' && exp.get(i).charAt(0) != ')')
                 post_exp.add(exp.get(i));
             else if( exp.get(i).charAt(0) == '(')
                 s.push(exp.get(i));
@@ -76,8 +101,10 @@ public class ExpEval {
             s.pop();
         }
     }
-    public int cal_exp(String str) {
-        parse(str);
+    public String cal_exp(String str) {
+        if( parse(str) ) {
+            return "INVALID INPUT";
+        }
         to_postfix();
 
         Stack<Integer> s = new Stack<Integer>();
@@ -98,7 +125,7 @@ public class ExpEval {
                     s.push(n2/n1);
             }
         }
-        return s.peek();
+        return to_str(s.peek());
     }
     public ExpEval() {
         exp = new ArrayList<String>();

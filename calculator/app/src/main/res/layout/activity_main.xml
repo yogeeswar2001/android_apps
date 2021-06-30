@@ -177,7 +177,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/clrbtn"
             app:layout_constraintTop_toBottomOf="@+id/exp" android:textSize="36sp"
-            android:gravity="bottom|end"/>
+            android:gravity="bottom|end" android:layout_marginRight="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"/>
     <TextView
             android:layout_width="0dp"
             android:layout_height="0dp" android:id="@+id/exp"
@@ -185,14 +186,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/ans" android:textSize="36sp"
-            android:gravity="bottom|end"/>
+            android:gravity="bottom|end" android:layout_marginRight="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"/>
     <Button
             android:text="@string/btn_del"
             android:layout_width="0dp"
             android:layout_height="85dp" android:id="@+id/button"
             app:layout_constraintStart_toEndOf="@+id/clrbtn" app:layout_constraintEnd_toStartOf="@+id/ansbtn"
-            app:layout_constraintBottom_toTopOf="@+id/btn3"
-            app:layout_constraintTop_toBottomOf="@+id/ans" android:textSize="30sp"
+            android:textSize="30sp"
             android:background="@android:color/holo_purple"
-            android:onClick="onClickdelbtn"/>
+            android:onClick="onClickdelbtn"
+            app:layout_constraintBottom_toTopOf="@+id/btn2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
