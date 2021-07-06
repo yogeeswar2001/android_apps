@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WeatherForeCast</string>
+    <string name="search_btn">search</string>
+    <string name="search_hint">search by city name</string>
+</resources>
