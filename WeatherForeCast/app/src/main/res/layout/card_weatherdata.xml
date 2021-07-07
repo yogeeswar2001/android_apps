@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        card:cardElevation="2dp"
+        card:cardCornerRadius="5dp"
+        >
+    <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="scattered clouds"
+                  android:textStyle="bold"
+                  android:textSize="24dp"
+                  card:layout_constraintTop_toTopOf="parent"
+                  android:layout_marginTop="20dp" android:id="@+id/weatherDesc" android:layout_marginStart="16dp"
+                  card:layout_constraintStart_toEndOf="@+id/icon" android:layout_marginEnd="16dp"
+                  card:layout_constraintEnd_toEndOf="parent"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="37&#xb0;"
+                  android:textStyle="normal"
+                  android:textSize="40dp"
+                  android:layout_marginStart="48dp" card:layout_constraintStart_toEndOf="@+id/dt"
+                  card:layout_constraintEnd_toStartOf="@+id/wind" android:layout_marginEnd="16dp"
+                  android:id="@+id/temp" card:layout_constraintBottom_toBottomOf="parent"
+                  android:layout_marginBottom="8dp"/>
+        <ImageView android:layout_width="80dp" android:layout_height="80dp"
+                   card:layout_constraintTop_toTopOf="parent"
+                   android:id="@+id/icon" card:layout_constraintStart_toStartOf="parent"
+                   android:layout_marginStart="16dp"
+                   card:layout_constraintBottom_toTopOf="@+id/dt"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="27-07-2020"
+                  android:id="@+id/dt"
+                  card:layout_constraintTop_toBottomOf="@+id/icon" card:layout_constraintStart_toStartOf="parent"
+                  android:layout_marginStart="16dp" card:layout_constraintBottom_toBottomOf="parent"
+        />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="8.82"
+                  android:textStyle="normal"
+                  android:textSize="40dp"
+                  android:id="@+id/wind" android:layout_marginStart="16dp"
+                  card:layout_constraintStart_toEndOf="@+id/temp" card:layout_constraintBottom_toBottomOf="parent"
+                  android:layout_marginBottom="8dp" card:layout_constraintEnd_toStartOf="@+id/humidity"
+                  android:layout_marginEnd="16dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="73"
+                  android:textStyle="normal"
+                  android:id="@+id/humidity"
+                  android:textSize="40dp" android:layout_marginStart="16dp"
+                  card:layout_constraintStart_toEndOf="@+id/wind" android:layout_marginEnd="16dp"
+                  card:layout_constraintEnd_toEndOf="parent" card:layout_constraintBottom_toBottomOf="parent"
+                  android:layout_marginBottom="8dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

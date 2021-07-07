@@ -1,51 +1,24 @@
 package com.yogeeswar.weatherforecast;
 
 public class WeatherData {
-    private String cityName;
-    private String lon;
-    private String lat;
     private String weatherDesc;
     private String imgIcon;
     private String temp;
     private String humidity;
     private String wind;
 
-    public WeatherData(String cityName, String lon, String lat, String weatherDesc, String imgIcon, String temp, String humidity, String wind) {
-        this.cityName = cityName;
-        this.lon = lon;
-        this.lat = lat;
+    private String date;
+
+    public WeatherData(String weatherDesc, String imgIcon, String temp, String humidity, String wind, String date) {
         this.weatherDesc = weatherDesc;
         this.imgIcon = imgIcon;
         this.temp = temp;
         this.humidity = humidity;
         this.wind = wind;
+        this.date = date;
     }
 
     public WeatherData() {
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public String getLon() {
-        return lon;
-    }
-
-    public void setLon(String lon) {
-        this.lon = lon;
-    }
-
-    public String getLat() {
-        return lat;
-    }
-
-    public void setLat(String lat) {
-        this.lat = lat;
     }
 
     public String getWeatherDesc() {
@@ -89,6 +62,14 @@ public class WeatherData {
     }
 
     public String toString(){
-        return "name: "+cityName+"lat: "+lat+"lon: "+lon+"temp: "+temp;
+        return "temp: "+temp+"humidity: "+humidity+"wind: "+wind;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
