@@ -6,15 +6,17 @@ public class WeatherData {
     private String temp;
     private String humidity;
     private String wind;
+    private String pressure;
 
     private String date;
 
-    public WeatherData(String weatherDesc, String imgIcon, String temp, String humidity, String wind, String date) {
+    public WeatherData(String weatherDesc, String imgIcon, String temp, String humidity, String wind, String pressure, String date) {
         this.weatherDesc = weatherDesc;
         this.imgIcon = imgIcon;
         this.temp = temp;
         this.humidity = humidity;
         this.wind = wind;
+        this.pressure = pressure;
         this.date = date;
     }
 
@@ -71,5 +73,13 @@ public class WeatherData {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(String pressure) {
+        this.pressure = pressure;
     }
 }

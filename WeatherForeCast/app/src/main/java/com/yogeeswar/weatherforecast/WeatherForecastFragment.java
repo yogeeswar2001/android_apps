@@ -35,7 +35,7 @@ public class WeatherForecastFragment extends Fragment {
             }
             @Override
             public void onResponse(CityData cityData, ArrayList<WeatherData> weatherData) {
-                Toast.makeText(getContext(), cityData.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), cityData.toString(), Toast.LENGTH_SHORT).show();
                 for(WeatherData i : weatherData ){
                     data.add(i);
                 }

@@ -9,4 +9,11 @@
     <string name="tab2_name">5 day weather</string>
 
     <string name="forecastFragment">weather forecast for 5 days with 3-hour step.</string>
+    <string name="weatherIcon">weather icon</string>
+    <string name="windIcon">wind icon</string>
+    <string name="humidityIcon">humidity icon</string>
+
+    <string name="wind">WIND</string>
+    <string name="pressure">PRESSURE</string>
+    <string name="humidity">HUMIDITY</string>
 </resources>

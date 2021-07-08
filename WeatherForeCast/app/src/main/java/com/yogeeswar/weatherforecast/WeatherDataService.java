@@ -111,7 +111,9 @@ public class WeatherDataService {
                             weatherData.setImgIcon(weather.getString("icon"));
                             weatherData.setTemp(main.getString("temp"));
                             weatherData.setHumidity(main.getString("humidity"));
+                            weatherData.setPressure(main.getString("pressure"));
                             weatherData.setWind(wind.getString("speed"));
+                            weatherData.setDate(response.getString("dt"));
 
                             listener.onResponse(cityData, weatherData);
                         } catch (JSONException e) {
@@ -125,7 +127,6 @@ public class WeatherDataService {
                 listener.onError(error.toString());
             }
         });
-
         RequestSingleton.getInstance(context).addToRequestQueue(request);
     }
 
