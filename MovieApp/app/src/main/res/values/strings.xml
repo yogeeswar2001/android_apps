@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="detailActivity">Movie Details</string>
+
+    <string name="title1">TOP RATED</string>
+    <string name="title2">UPCOMING</string>
+    <string name="title3">SEARCH</string>
+</resources>
