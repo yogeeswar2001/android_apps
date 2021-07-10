@@ -1,4 +1,4 @@
-package com.yogeeswar.weatherforecast;
+package com.yogeeswar.weatherforecast.model;
 
 public class WeatherData {
     private String weatherDesc;

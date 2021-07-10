@@ -18,7 +18,7 @@ public class CurrentWeatherFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.fragment_current_weather, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_current_weather, container, false);
         return layout;
     }
 }

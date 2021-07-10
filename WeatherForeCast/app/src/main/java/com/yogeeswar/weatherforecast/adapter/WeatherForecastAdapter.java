@@ -1,4 +1,4 @@
-package com.yogeeswar.weatherforecast;
+package com.yogeeswar.weatherforecast.adapter;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
+import com.yogeeswar.weatherforecast.R;
+import com.yogeeswar.weatherforecast.model.WeatherData;
 
 import java.util.ArrayList;
 
@@ -49,7 +51,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
         ImageView icon = (ImageView)cardview.findViewById(R.id.icon);
 
         desc.setText(data.get(position).getWeatherDesc());
-        tempTxt.setText(data.get(position).getTemp());
+        tempTxt.setText(data.get(position).getTemp()+" K");
         windTxt.setText(data.get(position).getWind());
         humidTxt.setText(data.get(position).getHumidity());
         dtTxt.setText(data.get(position).getDate());

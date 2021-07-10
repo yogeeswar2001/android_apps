@@ -7,11 +7,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import com.yogeeswar.weatherforecast.adapter.WeatherForecastAdapter;
+import com.yogeeswar.weatherforecast.model.WeatherData;
 
 import java.util.ArrayList;
 
 public class WeatherForecastFragment extends Fragment {
+    public static WeatherForecastAdapter adapter;
+    public static ArrayList<WeatherData> data;
+
     public WeatherForecastFragment() {
         // Required empty public constructor
     }
@@ -23,25 +27,11 @@ public class WeatherForecastFragment extends Fragment {
 
         WeatherDataService dataService = new WeatherDataService(getContext());
 
-        final ArrayList<WeatherData> data = new ArrayList<WeatherData>();
-        final WeatherForecastAdapter adapter = new WeatherForecastAdapter(data);
+        data = new ArrayList<WeatherData>();
+        adapter = new WeatherForecastAdapter(data);
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
         forecastRecycler.setAdapter(adapter);
         forecastRecycler.setLayoutManager(layoutManager);
-        dataService.getWeatherForecast("chennai", new WeatherDataService.ForecastListener() {
-            @Override
-            public void onError(String msg) {
-                Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onResponse(CityData cityData, ArrayList<WeatherData> weatherData) {
-                //Toast.makeText(getContext(), cityData.toString(), Toast.LENGTH_SHORT).show();
-                for(WeatherData i : weatherData ){
-                    data.add(i);
-                }
-                adapter.notifyDataSetChanged();
-            }
-        });
 
         return forecastRecycler;
     }
