@@ -5,7 +5,7 @@
 <td><img src="../imgs/noteApp1.jpg" width=300 height=500></td>
 <td><img src="../imgs/noteApp2.jpg" width=300 height=500></td>
 <td><img src="../imgs/noteApp3.jpg" width=300 height=500></td>
-<td><img src="../imgs/noteApp4jpg" width=300 height=500></td>
+<td><img src="../imgs/noteApp4.jpg" width=300 height=500></td>
 </tr>
 </table>
 
