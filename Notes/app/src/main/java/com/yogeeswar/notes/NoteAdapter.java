@@ -9,25 +9,24 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
-    private String[] name;
-    private String[] note;
+    private ArrayList<NoteData> data;
     private Listener listener;
 
     interface Listener {
-        void onclick(int position);
+        void onLongClick(int position);
     }
 
-    public NoteAdapter(String[] name, String[] note) {
-        this.name = name;
-        this.note = note;
+    public NoteAdapter(ArrayList<NoteData> data) {
+        this.data = data;
     }
 
     @Override
     public int getItemCount() {
-        return name.length;
+        return data.size();
     }
 
     public void setListener(Listener listener) {
@@ -49,13 +48,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position){
+    public void onBindViewHolder(final ViewHolder holder, int position){
         CardView cv = holder.cardview;
 
         TextView name_text = (TextView)cv.findViewById(R.id.card_name_id);
-        name_text.setText(name[position]);
+        name_text.setText(data.get(position).getName());
         TextView note_text = (TextView)cv.findViewById(R.id.card_note_id);
-        note_text.setText(note[position]);
+        note_text.setText(data.get(position).getNote());
         LinearLayout layout = (LinearLayout)cv.findViewById(R.id.card_layout);
 
         Random rand = new Random();
@@ -69,7 +68,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             @Override
             public boolean onLongClick(View v) {
                 if(listener != null)
-                    listener.onclick(position);
+                    listener.onLongClick(holder.getAdapterPosition());
                 return true;
             }
         });

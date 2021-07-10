@@ -3,6 +3,9 @@ package com.yogeeswar.notes;
 public class NoteData {
     private String name, note;
 
+    NoteData() {
+    }
+
     public String getNote() {
         return note;
     }
